@@ -49,7 +49,7 @@ export default function App({ potes }) {
       </TableHeader>
       <TableBody items={dataToRender}>
         {(item) => (
-          <TableRow key={item.id}>
+          <TableRow className="text-white" key={item.id}>
             {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
           </TableRow>
         )}
