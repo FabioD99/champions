@@ -20,7 +20,7 @@ export default function App() {
         );
       case "role":
         return (
-          <div className="flex flex-col bg-blue-900">
+          <div className="flex flex-col">
             <p className="text-bold text-sm capitalize">{cellValue}</p>
             <p className="text-bold text-sm capitalize text-default-400">{user.team}</p>
           </div>
@@ -31,10 +31,10 @@ export default function App() {
   }, []);
 
   return (
-  <Table aria-label="Example table with custom cells">
-      <TableHeader className="bg-blue-900" columns={columns}>
+  <Table aria-label="Example table with custom cells" removeWrapper className="bg-blue-950 rounded-lg border-collapse">
+      <TableHeader columns={columns}>
         {(column) => (
-          <TableColumn key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
+          <TableColumn className="bg-blue-800 text-slate-400" key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
             {column.name}
           </TableColumn>
         )}
