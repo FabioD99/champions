@@ -11,11 +11,24 @@ import { GithubIcon } from "@/components/icons";
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+  
     <div className="flex flex-row gap-6 min-w-max">
+      <div className=" flex-row gap-6 min-w-max">
+      <h1 className="text-center">POTE 1</h1>
       <TablePotes potes="pote1" />
+      </div>
+      <div className=" flex-row gap-6 min-w-max">
+      <h1 className="text-center">POTE 2</h1>
       <TablePotes potes="pote2" />
+      </div>
+      <div className=" flex-row gap-6 min-w-max">
+      <h1 className="text-center">POTE 3</h1>
       <TablePotes potes="pote3" />
+      </div>
+      <div className=" flex-row gap-6 min-w-max">
+      <h1 className="text-center">POTE 4</h1>
       <TablePotes potes="pote4" />
+      </div>
     </div> 
       <Table />
     </section>
