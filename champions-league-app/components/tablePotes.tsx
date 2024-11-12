@@ -2,27 +2,35 @@
 
 import React from "react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, Tooltip, getKeyValue} from "@nextui-org/react";
-import {columns, users} from "./dataPotes";
+import {columns, pote1, pote2, pote3, pote4} from "./dataPotes";
 
 
-export default function App() {
-  const renderCell = React.useCallback((user, columnKey) => {
-    const cellValue = user[columnKey];
+export default function App({ potes }) {
+
+  const dataToRender = {
+        pote1,
+        pote2,
+        pote3,
+        pote4,
+    }[potes] || pote1;
+
+  const renderCell = React.useCallback((team, columnKey) => {
+    const cellValue = team[columnKey];
 
     switch (columnKey) {
       case "name":
         return (
           <User
-            avatarProps={{radius: "md", src: user.avatar}}
+            avatarProps={{radius: "md", src: team.avatar}}
             name={cellValue}
           >
           </User>
         );
-      case "role":
+      case "league":
         return (
           <div className="flex flex-col">
             <p className="text-bold text-sm capitalize">{cellValue}</p>
-            <p className="text-bold text-sm capitalize text-default-400">{user.team}</p>
+            <p className="text-bold text-sm capitalize text-default-400">{team.nation}</p>
           </div>
         );
       default:
@@ -39,7 +47,7 @@ export default function App() {
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody items={users}>
+      <TableBody items={dataToRender}>
         {(item) => (
           <TableRow key={item.id}>
             {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
