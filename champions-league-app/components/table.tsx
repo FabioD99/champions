@@ -6,7 +6,7 @@ import {users} from "./data";
 
 export default function App() {
   const [page, setPage] = React.useState(1);
-  const rowsPerPage = 4;
+  const rowsPerPage = 9;
 
   const pages = Math.ceil(users.length / rowsPerPage);
 
@@ -16,7 +16,7 @@ export default function App() {
 
     return users.slice(start, end);
   }, [page, users]);
-
+   
   return (
     <Table 
       aria-label="Example table with client side pagination"
@@ -33,14 +33,24 @@ export default function App() {
           />
         </div>
       }
+      style={{
+        backgroundColor: "#172554",
+        borderRadius: "10px",
+      }}
       classNames={{
         wrapper: "min-h-[222px]",
       }}
     >
       <TableHeader>
-        <TableColumn key="name">NAME</TableColumn>
-        <TableColumn key="role">ROLE</TableColumn>
-        <TableColumn key="status">STATUS</TableColumn>
+        <TableColumn key="avatar">Pote</TableColumn>
+        <TableColumn key="H1">H</TableColumn>
+        <TableColumn key="A1">A</TableColumn>
+        <TableColumn key="H2">H</TableColumn>
+        <TableColumn key="A2">A</TableColumn>
+        <TableColumn key="H3">H</TableColumn>
+        <TableColumn key="A3">A</TableColumn>
+        <TableColumn key="H4">H</TableColumn>
+        <TableColumn key="A4">A</TableColumn>
       </TableHeader>
       <TableBody items={items}>
         {(item) => (
@@ -48,6 +58,7 @@ export default function App() {
             {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
           </TableRow>
         )}
+        
       </TableBody>
     </Table>
   );

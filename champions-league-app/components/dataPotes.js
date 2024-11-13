@@ -73,7 +73,7 @@ const columns = [
     {
       id: 1,
       name: "Bayer Leverkusen",
-      league: "Bundeslgia",
+      league: "Bundesliga",
       nation: "Alemanha",
       avatar: "bayerleverkusen.svg",
     },

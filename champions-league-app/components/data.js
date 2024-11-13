@@ -1,8 +1,15 @@
 export const users = [
     {
       key: "1",
-      name: "Tony Reichert",
-      role: "CEO",
+      avatar: "/realmadrid.svg",
+      A1: "Manchester United",
+      H1: "Benfica",
+      A2: "Manchester United",
+      H2: "Benfica",
+      A3: "Manchester United",
+      H3: "Benfica",
+      A4: "Manchester United",
+      H4: "Benfica",
     },
     {
       key: "2",
@@ -121,6 +128,61 @@ export const users = [
     },
     {
       key: "25",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "26",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "27",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "28",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "29",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "30",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "31",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "32",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "33",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "34",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "35",
+      name: "Liam King",
+      role: "Mobile App Developer",
+    },
+    {
+      key: "36",
       name: "Liam King",
       role: "Mobile App Developer",
     },
