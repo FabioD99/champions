@@ -1,25 +1,22 @@
 'use client'
 
-import React from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination, getKeyValue} from "@nextui-org/react";
-import {users} from "./data";
+import React, { useState, useMemo } from "react";
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination } from "@nextui-org/react";
+import { columns, pote1, pote2, pote3, pote4 } from "./dataPotes";
 
 export default function App() {
-  const [page, setPage] = React.useState(1);
-  const rowsPerPage = 9;
+  // State to keep track of the current pote (1 - 4)
+  const [potePage, setPotePage] = useState(1);
 
-  const pages = Math.ceil(users.length / rowsPerPage);
+  // Define each pote as an array for easier navigation
+  const poteData = [pote1, pote2, pote3, pote4];
 
-  const items = React.useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
+  // Use the current potePage to select the relevant pote list
+  const items = poteData[potePage - 1];
 
-    return users.slice(start, end);
-  }, [page, users]);
-   
   return (
     <Table 
-      aria-label="Example table with client side pagination"
+      aria-label="Example table with client-side pagination by pote"
       bottomContent={
         <div className="flex w-full justify-center">
           <Pagination
@@ -27,9 +24,9 @@ export default function App() {
             showControls
             showShadow
             color="secondary"
-            page={page}
-            total={pages}
-            onChange={(page) => setPage(page)}
+            page={potePage}
+            total={poteData.length}
+            onChange={(page) => setPotePage(page)}
           />
         </div>
       }
@@ -41,7 +38,7 @@ export default function App() {
         wrapper: "min-h-[222px]",
       }}
     >
-      <TableHeader>
+      <TableHeader columns={columns}>
         <TableColumn key="avatar">Pote</TableColumn>
         <TableColumn key="H1">H</TableColumn>
         <TableColumn key="A1">A</TableColumn>
@@ -54,11 +51,29 @@ export default function App() {
       </TableHeader>
       <TableBody items={items}>
         {(item) => (
-          <TableRow key={item.name}>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+          <TableRow key={item.id}>
+            {/* Render avatar in the first column only */}
+            <TableCell>
+              <div className="flex">
+              <img
+                src={`${item.avatar}`}
+                alt={item.name}
+                style={{ borderRadius: "50%", width: 40, height: 40 }}
+              />
+              <h1 className="text-center align-middle">{item.name}</h1>
+              </div>
+            </TableCell>
+            {/* Render empty cells for the other columns */}
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
+            <TableCell children={undefined} />
           </TableRow>
         )}
-        
       </TableBody>
     </Table>
   );
