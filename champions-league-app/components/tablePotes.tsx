@@ -8,10 +8,7 @@ import {columns, pote1, pote2, pote3, pote4} from "./dataPotes";
 export default function App({ potes }) {
 
   const dataToRender = {
-        pote1,
-        pote2,
-        pote3,
-        pote4,
+        pote1, pote2, pote3, pote4,
     }[potes] || pote1;
 
   const renderCell = React.useCallback((team, columnKey) => {
@@ -39,11 +36,11 @@ export default function App({ potes }) {
   }, []);
 
   return (
-  <Table aria-label="Example table with custom cells" removeWrapper className="bg-blue-950 rounded-lg border-collapse">
+  <Table aria-label="Example table with custom cells" removeWrapper className="bg-blue-950 opacity-80 rounded-lg border-collapse">
       <TableHeader columns={columns}>
         {(column) => (
-          <TableColumn className="bg-blue-800 text-slate-400" key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
-            {column.name}
+          <TableColumn className="bg-blue-800 opacity-75" key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
+           {column.name}
           </TableColumn>
         )}
       </TableHeader>

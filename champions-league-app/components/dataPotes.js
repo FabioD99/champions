@@ -1,6 +1,6 @@
 const columns = [
-    {name: "Clube", uid: "name"},
-    {name: "Liga e Nação", uid: "league"},
+    {name: "CLUBE", uid: "name"},
+    {name: "LIGA E NAÇÃO", uid: "league"},
   ];
   
   const pote1 = [

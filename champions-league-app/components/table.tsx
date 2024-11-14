@@ -15,8 +15,7 @@ export default function App() {
   const items = poteData[potePage - 1];
 
   return (
-    <Table 
-      aria-label="Example table with client-side pagination by pote"
+    <Table aria-label="Example table with client-side pagination by pote" removeWrapper className="bg-blue-950 opacity-80 rounded-lg border-collapse"
       bottomContent={
         <div className="flex w-full justify-center">
           <Pagination
@@ -39,20 +38,19 @@ export default function App() {
       }}
     >
       <TableHeader columns={columns}>
-        <TableColumn key="avatar">Pote</TableColumn>
-        <TableColumn key="H1">H</TableColumn>
-        <TableColumn key="A1">A</TableColumn>
-        <TableColumn key="H2">H</TableColumn>
-        <TableColumn key="A2">A</TableColumn>
-        <TableColumn key="H3">H</TableColumn>
-        <TableColumn key="A3">A</TableColumn>
-        <TableColumn key="H4">H</TableColumn>
-        <TableColumn key="A4">A</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="avatar">EQUIPA</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="H1">POT 1H</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="A1">POT 1A</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="H2">POT 2H</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="A2">POT 2A</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="H3">POT 3H</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="A3">POT 3A</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="H4">POT 4H</TableColumn>
+        <TableColumn className="bg-blue-800 opcaity-75" key="A4">POT 4A</TableColumn>
       </TableHeader>
       <TableBody items={items}>
         {(item) => (
-          <TableRow key={item.id}>
-            {/* Render avatar in the first column only */}
+          <TableRow className="text-white" key={item.id}>
             <TableCell>
               <div className="flex">
               <img
@@ -60,10 +58,12 @@ export default function App() {
                 alt={item.name}
                 style={{ borderRadius: "50%", width: 40, height: 40 }}
               />
-              <h1 className="text-center align-middle">{item.name}</h1>
+              <div className="flex flex-col">
+               <h1 className="ml-3 text-left align-left">{item.name}</h1>
+               <p className="text-slate-400 text-left align-left ml-3">{item.nation}</p>
+              </div>
               </div>
             </TableCell>
-            {/* Render empty cells for the other columns */}
             <TableCell children={undefined} />
             <TableCell children={undefined} />
             <TableCell children={undefined} />
