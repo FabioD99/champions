@@ -53,8 +53,10 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <img src="inDi.png" width="100" height="100" />
-            <p className="font-bold text-inherit">Infinite Digital Academy</p>
+          <div className="flex bg-white opacity-70">
+          <img src="inDi.png" width="100" height="100" />
+          </div>
+            <p className=" ml-5 font-bold text-inherit">Infinite Digital Academy</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
