@@ -4,6 +4,11 @@ import React, { useState, useMemo } from "react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination } from "@nextui-org/react";
 import { columns, pote1, pote2, pote3, pote4 } from "./dataPotes";
 
+
+
+
+
+
 export default function App() {
   // State to keep track of the current pote (1 - 4)
   const [potePage, setPotePage] = useState(1);
@@ -22,7 +27,7 @@ export default function App() {
             isCompact
             showControls
             showShadow
-            color="secondary"
+            color= "default"
             page={potePage}
             total={poteData.length}
             onChange={(page) => setPotePage(page)}
@@ -50,7 +55,7 @@ export default function App() {
       </TableHeader>
       <TableBody items={items}>
         {(item) => (
-          <TableRow className="text-white" key={item.id}>
+          <TableRow className="text-white border-gray-300" key={item.id}>
             <TableCell>
               <div className="flex">
               <img
